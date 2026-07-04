@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Redirigiendo…</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    background: #0a0a0a;
+    color: #dcdcdc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    padding: 1.5rem;
+  }
+</style>
+<p>Redirigiendo de vuelta a la app local…</p>
+<script>
+  // Relay estático: TikTok solo permite redirect_uri bajo un dominio HTTPS verificado
+  // (physiquelogic.co), pero el intercambio de token con el Client Secret ocurre en el
+  // servidor local de desarrollo. Esta página reenvía code/state tal cual al servidor local
+  // sin tocarlos ni almacenarlos.
+  location.replace('http://localhost:3010/callback' + location.search);
+</script>
